@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="rana">
+  <test thread-count="5" parallel="classes" name="Report">
+  <classes>
+	  <class name="rana_selen.Counting_items_listbox">
+	  </class>
+	  <class name="rana_selen.Expected_tittle_actual_tittle">
+	  </class>
+	  <class name="rana_selen.First_class">
+	  </class> 
+	   <class name="rana_selen.Handling_mouse_2">
+	  </class> 
+	   <class name="rana_selen.Second_class">
+	  </class> 
+	   <class name="rana_selen.Verify_page">
+	  </class> 
+	
+  </classes>
+ 
+  
+  </test> <!-- Report -->
+</suite> <!-- rana -->

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+		<class name="com.olobby.ranadheer.FileShare_Projects"/>
+      <class name="com.olobby.ranadheer.Users_Location_Roles"/>
+      <class name="com.olobby.ranadheer.TrashFeatureFolder"/>
+      <class name="com.olobby.ranadheer.QuickNotes_Trash"/>
+      <class name="com.olobby.ranadheer.ProjectHomePage"/>
+      <class name="com.olobby.ranadheer.FileShare_UserAcees"/>
+      <class name="com.olobby.ranadheer.FileShare_Clients"/>
+      <class name="com.olobby.ranadheer.AddSubTask"/>
+	
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+
+
+

@@ -1,0 +1,81 @@
+package com.cmd.CreateTask;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.List;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+import com.cps.ObjectRepository.CmdHomePage;
+import com.cps.ObjectRepository.CreateTaskPage;
+import com.cps.genericUtility.BaseClass;
+import com.cps.genericUtility.ExcelUtility;
+import com.cps.genericUtility.FileUtility;
+import com.cps.genericUtility.IConstants;
+import com.cps.genericUtility.JavaUtility;
+import com.cps.genericUtility.WebDriverUtility;
+/**
+ * 
+ * @author PrakashSrivastava
+ *
+ */
+ //updated 
+public class createTask_TC_01 extends BaseClass {
+	static {
+		System.setProperty(IConstants.chromeKey,IConstants.chromeValue);
+	}
+     @Test(groups="smokeTest", retryAnalyzer = com.cps.genericUtility.RetryAnalyserImptn.class)
+     public void createTaskAndVerify() throws InterruptedException, AWTException, IOException {
+    	//WebDriver driver=null; 
+		JavaUtility jLib = new JavaUtility();
+		FileUtility fLib = new FileUtility();
+		ExcelUtility eLib = new ExcelUtility();
+		WebDriverUtility wLib = new WebDriverUtility();
+		wLib.waitTillPageGetsLoadImplicitlyWait(driver, 30);
+        CmdHomePage hpage=new CmdHomePage(driver); 
+		hpage.clickaddTask(driver);
+		//verify whether Task Page is displayed or not
+//		String Title = "modal-body";
+//		Assert.assertEquals(driver.getTitle(),Title,"CreateTask page is not displayed the displayed page is - " + driver.getTitle());
+//		Reporter.log("CreateTask page is displayed");
+		
+		CreateTaskPage ctp=new CreateTaskPage(driver);
+		ctp.getSubjectDropDown().sendKeys(eLib.readDataFromExcel("CreateTask", 1, 0)+jLib.getRandomNumber());
+		ctp.getDescriptionBox().sendKeys(eLib.readDataFromExcel("CreateTask", 1, 1)+jLib.getRandomNumber());
+        ctp.getPayerdropdown().click();
+		ctp.clickAndAddPayerDropDown(driver);
+		ctp.getPayer2().click();
+		ctp.getSelectParticularPayer().click();
+	    ctp.getTINdropDown().click();
+     	ctp.SelectParticularTin(driver);
+     	ctp.getTINDropDown2().click();
+		ctp.getTinProLocaDropdown().click();
+		ctp.ClickParticularTin(driver);
+    	ctp.getAssignto().sendKeys(eLib.readDataFromExcel("CreateTask", 1, 2));
+    	ctp.clickEnter(driver);
+    	ctp.waitForClickElement(driver);
+    	ctp.getNotifyuser().click();
+    	ctp.getCreateButton().click();
+    	Reporter.log("Task is created Successfully",true);
+    	//hpage.clickSignOutLink(driver);
+    	driver.findElement(By.xpath("//i[@class='fas fa-user-circle fa-2x m-2 userIcon']")).click();
+    	driver.findElement(By.xpath("//a[text()='Logout']")).click();
+	}
+    
+}	 
+		
+		
+		
+			
+

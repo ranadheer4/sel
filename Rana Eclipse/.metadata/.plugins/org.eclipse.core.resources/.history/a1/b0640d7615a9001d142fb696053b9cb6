@@ -1,0 +1,27 @@
+package com.cmd.rana;
+
+import org.testng.annotations.Test;
+
+import com.cps.ObjectRepository.Cmd_DeleteNote_Task;
+import com.cps.genericUtility.BaseClass;
+
+public class Delete_Note_Task extends BaseClass {
+	
+	@Test
+	public void deleteNotetask() throws InterruptedException {
+	Cmd_DeleteNote_Task d = new Cmd_DeleteNote_Task(driver);
+	d.mouseMover(driver);
+	d.clickWorkflowDropdown();
+	d.clickDeletenoteTask();
+	d.clickPage();
+	d.getDropdown_category().sendKeys(eLib.readDataFromExcel("Delete_Note_Task", 1, 0));
+	d.clickEnter(driver);
+	Thread.sleep(4000);
+	d.getDropdown_Item_Category().sendKeys(eLib.readDataFromExcel("Delete_Note_Task", 1, 1));
+	d.clickEnter(driver);
+	Thread.sleep(4000);
+	d.clickPrtcularCheckbox();
+	Thread.sleep(4000);
+	d.clickDelete();
+}
+}

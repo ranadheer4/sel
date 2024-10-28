@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.olobby.R.FileShare_Clients"/>
+      <class name="com.olobby.R.FileShare_Projects"/>
+      <class name="com.olobby.R.FolderAces_1"/>
+      <class name="com.olobby.R.FileShare_UserAcees"/>
+      <class name="com.olobby.R.FolderAces_2"/>
+      <class name="com.olobby.R.TrashFeatureFolder"/>
+      <class name="com.olobby.R.Users_Location_Roles"/>
+      <class name="com.olobby.R.QuickNotes_Trash"/>
+      <class name="com.olobby.R.ProjectHomePage"/>
+      <class name="com.olobby.R.FileShare_QuickAccess_ReceviedSec"/>
+      <class name="com.olobby.R.FileShare_QuickAccess"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

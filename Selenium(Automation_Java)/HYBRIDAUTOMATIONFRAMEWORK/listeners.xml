@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" thread-count="3">
+	<listeners>
+		<listener class-name="com.prakash.genericUtility.ItestListenerImtn"/>
+	</listeners>
+<test thread-count="1" name="Test">
+    <classes>
+		<class name="com.cps.OrangeHRM.Demo1DeleteUser"/>
+		<class name="com.cps.OrangeHRM.Demo2EditUser"/>
+		<class name="com.cps.OrangeHRM.Demo3AddUser"/>
+		<class name="com.cps.OrangeHRM.New_User_OrangeHrm"/>
+		
+		
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

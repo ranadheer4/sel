@@ -1,0 +1,18 @@
+<suite name="suite">
+	<test name="test" testRunner=>
+		<classes>
+			
+			<class name="com.cps.OrangeHRM.Demo1DeleteUser"/>
+				<class name="com.cps.OrangeHRM.Demo2EditUser"/>
+			<class name="com.cps.OrangeHRM.Demo3AddUser"/>
+				<class name = "com.cps.OrangeHRM.New_User_OrangeHRM"/>
+				<class name="com.cps.OrangeHRM.New_User_OrangeHRM"/>
+				<class name="com.cps.OrangeHRM.Demo3AddUser"/>
+				<class name="com.cps.OrangeHRM.Demo4"/>
+		</classes>
+		
+		
+		
+	</test>
+	
+</suite>

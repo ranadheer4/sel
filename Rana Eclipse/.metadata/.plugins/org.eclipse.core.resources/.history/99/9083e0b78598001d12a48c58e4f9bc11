@@ -1,0 +1,126 @@
+package com.cmd.createOrganization;
+
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.time.Duration;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Third_Test {
+
+	public static void main(String[] args) throws Throwable {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "C:/Rana durgi/chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://dev-refactor.credentialmydoc.com/");
+		
+		
+		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("ctg@credentialmydoc.com");
+		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("Ctgadmin@2022");
+		driver.findElement(By.xpath("//button[normalize-space()='Sign in']")).click();
+		
+		//driver.findElement(By.xpath("//i[@class='fas fa-bars']")).click();
+		WebElement arow=driver.findElement(By.xpath("//aside[@class='left-sidebar']"));
+		Actions ac=new Actions(driver);
+		ac.moveToElement(arow).perform();
+				
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//span[normalize-space()='Provider Passport']")).click();
+        List<WebElement> options=driver.findElements(By.xpath("//ul[@id='provider']"));
+        
+        
+           for(WebElement option:options)
+               
+           { 
+               if(option.getText().equals("Show All Providers"))
+               {
+                   
+                   option.click();
+                   break;
+		
+
+	}
+           }
+   		   WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(15));
+           WebElement myElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='btn customWhite ng-star-inserted']")));
+           myElement.click();
+           //driver.findElement(By.xpath("//div[@class='btn customWhite ng-star-inserted']")).click();
+           //driver.findElement(By.xpath("//button[@aria-controls='Basic Personal Information']")).click();
+           driver.findElement(By.xpath("//input[@id='subject']")).sendKeys("Raki");
+           driver.findElement(By.xpath("//textarea[@id='description']")).sendKeys("Trail Run");
+           
+           //Select and click on School dropdown web element
+           
+           WebElement reg = driver.findElement(By.xpath("//ng-select[@placeholder='Select Payer']//div[@class='ng-select-container']"));
+           reg.click();
+           Actions ca = new Actions(driver);
+           ca.moveToElement(driver.findElement(By.xpath("//div[@id='a6bdf8a9ff8c-14']"))).click();
+           Robot rb=new Robot();
+//           Actions ca = new Actions(driver);
+//           ca.moveToElement(driver.findElement(By.xpath("(//div[@id='a56a4fe32c07-14'])[1]"))).click();
+           
+           
+           rb.keyPress(KeyEvent.VK_ENTER);
+           rb.keyRelease(KeyEvent.VK_ENTER);
+           rb.keyPress(KeyEvent.VK_ESCAPE);
+           rb.keyRelease(KeyEvent.VK_ESCAPE);
+//           
+//           WebElement tin = driver.findElement(By.xpath("(//input[@type='text'])[18]"));
+//           tin.click();
+//           tin.sendKeys("In Progress");
+//           Robot rt=new Robot();
+//           rt.keyPress(KeyEvent.VK_ENTER);
+//           rt.keyRelease(KeyEvent.VK_ENTER);
+//           //rt.keyPress(KeyEvent.VK_ESCAPE);
+//           //rt.keyRelease(KeyEvent.VK_ESCAPE);
+//           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+//           driver.findElement(By.id("a4c55bda5ded-14")).click();
+//
+//           // Store all School dropdown options into List
+//           List<WebElement> allOptions = driver.findElements(By.xpath("//ng-dropdown-panel[@id='abd08315ae05']"));
+//
+//           //Iterate through the options and match with the desired option to select
+//           for (WebElement option : allOptions) {
+//           if (option.getText().equals("AARP")) {
+//           option.click();
+//           break;
+//           }
+//           }
+           
+           
+           
+           
+//           Select payer = new Select(driver.findElement(By.xpath("//ng-select[@class='auto-grow-location-2x ng-select ng-select-multiple ng-select-searchable ng-select-clearable ng-untouched ng-pristine ng-invalid']//div[@class='ng-select-container']")));
+//           payer.selectByVisibleText(" 1199 SEIU ");           
+           
+           
+	}
+
+}

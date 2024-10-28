@@ -1,0 +1,8 @@
+To automate the selenium scripts requried below applications with configuartions
+1) Eclipse Editor oxygen-4.7.0
+2) JDK-1.8version
+3) Selenium Driver(Chrome driver and Gecko driver)
+4) To get locators value need some Extensions(Chropath and Selectorshub)
+5) Selenium server standalone jar files 3.14.0
+6) Apache POI Jar files poi-bin-3.16-zip
+7) Git-Hub Tool

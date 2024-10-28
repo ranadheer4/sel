@@ -1,0 +1,459 @@
+package com.olobby.R;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.olobby.ObjectRepo.HomePage;
+import com.olobby.genericUtility.BaseClass;
+import com.olobby.genericUtility.IConstants;
+
+public class Users_List extends BaseClass{
+	private static final int i = 0;
+	static {
+		System.setProperty(IConstants.chromeKey,IConstants.chromeValue);
+	}
+   @Test(
+      groups = {"SmokeTest"}
+      
+   )
+   public void roles_users() throws InterruptedException {
+	   HomePage hp = new HomePage(driver);
+	   hp.settingusers(driver);
+	 //store table into webelement
+//	   List<WebElement>cols = driver.findElements(By.xpath("//table[@role='presentation']/tbody/tr/td"));
+	   //count no of rows in table
+//	   Thread.sleep(5000);
+//	   System.out.println("no of cols are::"+cols.size());
+//	   List<WebElement>rows = driver.findElements(By.xpath("//table[@role='presentation']/tbody/tr/td[7]"));
+	   //count no of rows in table
+//	   Thread.sleep(5000);
+//	   System.out.println("no of rows are::"+rows.size());
+//	   for(int i=2;i<rows.size();i++) {
+//		   WebElement row=rows.get(i);
+//	   }
+//	   List<WebElement>cols = row.findElements(By.tagName("td"));
+//	   int columnnIndexToclick=6;
+//	   int rowIndexToClick=5;
+//	   Thread.sleep(5000);
+//	   if(columnnIndexToclick < cols.size() && i==rowIndexToClick) {
+//		   WebElement cellToClick=cols.get(columnnIndexToclick);
+//		   cellToClick.click();
+	   
+	   WebElement table=driver.findElement(By.id("gridContainer2")); 
+	   List<WebElement>rows=table.findElements(By.tagName("tr"));
+	   Thread.sleep(5000);
+	   for(int i=2;i<rows.size();i++) {                                               
+		   WebElement row=rows.get(i);
+	   System.out.println("no of rows are::"+rows.size());
+		List<WebElement>cells = row.findElements(By.tagName("td"));
+		System.out.println("no of cols are::"+cells.size());
+	   int columnnIndexToclick=7;
+	   int rowIndexToClick=5;
+	   Thread.sleep(5000);
+	   if(columnnIndexToclick < cells.size() && i==rowIndexToClick) {
+		   WebElement cellToClick=cells.get(columnnIndexToclick);
+		   cellToClick.click();
+   }
+}
+   }
+}
+..............................................................................................
+...........................................................................................
+package com.olobby.R;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import com.TaskManagement.ObjRepo.AddProjectPage;
+import com.TaskManagement.ObjRepo.InlineEdit;
+import com.TaskManagement.ObjRepo.TaskManagement;
+import com.olobby.ObjectRepo.HomePage;
+import com.olobby.genericUtility.BaseClass;
+import com.olobby.genericUtility.IConstants;
+
+public class TaskInlineEdit extends BaseClass {
+	static {
+		System.setProperty(IConstants.chromeKey,IConstants.chromeValue);
+	}
+   @Test(
+      groups = {"SmokeTest"}
+   )
+   public void inlineEdit() throws InterruptedException {
+	   HomePage hp = new HomePage(driver);
+	   Thread.sleep(6000);
+	   hp.getTaskManageMent().click();
+	   Thread.sleep(6000);
+	   TaskManagement t = new TaskManagement(driver);
+	   Thread.sleep(6000);
+	   
+	   t.getTasksClick().click();
+	   InlineEdit ie = new InlineEdit(driver);
+
+	   Thread.sleep(6000);
+//	   ie.getEditExistingTaskName().click();
+//	   Thread.sleep(2000);
+//	   Actions action = new Actions(driver);
+//		action.sendKeys(Keys.ESCAPE).perform();
+//	   ie.getEditExistingTaskName().clear();
+//	   ie.getEditExistingTaskName().sendKeys(eLib.readDataFromExcel("Inline", 1, 0));
+//	   AddProjectPage ap = new AddProjectPage(driver);
+	   driver.findElement(By.xpath("//td[@aria-colindex='15']//input[@role='combobox']")).click();
+	   //add row and escape
+//	   ie.getAddRow().click();
+//	   Thread.sleep(5000);
+//	   ie.getTaskNameField().click();
+//	   Actions action = new Actions(driver);
+//	   action.sendKeys(Keys.ESCAPE).perform();
+	   
+//	   ie.getTaskNameField().click();
+	   
+//	   Thread.sleep(2000);
+//	   ie.getTaskNameField().sendKeys(eLib.readDataFromExcel("Inline", 1, 0));
+//	   ap.clickEnter(driver);
+
+//	   Thread.sleep(5000);
+//	   ie.getAddRow().click();
+//	   Thread.sleep(2000);
+//	   ie.getTaskNameField().click();
+//	   Thread.sleep(2000);
+//	   Actions action = new Actions(driver);
+//	   action.sendKeys(Keys.ESCAPE).perform();
+	 
+//	   action.doubleClick(ie.getTaskNameField());
+	   
+	   
+//	   ie.getTaskNameField().sendKeys(eLib.readDataFromExcel("Inline", 1, 0));
+//	   action.doubleClick(ie.getEditLocation());
+//	   Thread.sleep(2000);
+//	   action.doubleClick(ie.getEditLocation()).perform();
+//	   Thread.sleep(2000);
+//	   
+//	   ie.getEditLocation().clear();
+//	   ie.getEditLocation().sendKeys(eLib.readDataFromExcel("Inline", 1, 0));
+	   
+//	   ie.getTaskNameField().click();
+//	   Thread.sleep(5000);
+//	   ie.getTaskNameField().sendKeys(eLib.readDataFromExcel("Inline", 1, 0));
+//	   AddProjectPage ap = new AddProjectPage(driver);
+//	   ap.clickEnter(driver);
+	   Thread.sleep(6000);
+	   ie.getCheckbox().click();
+//	   ie.getDeletelog().click();
+//	   ie.getDeleteButton().click();
+
+//	   hp.getTrash().click();
+//	   Thread.sleep(5000);
+	   Thread.sleep(6000);
+	   ie.getRestoreCheckbox().click();
+	   Thread.sleep(6000);
+	   ie.getRestoreButton().click();
+	   Thread.sleep(6000);
+	   ie.getRestorePopup().click();
+	   Thread.sleep(5000);
+	   t.getTasksClick().click();
+	   
+	   
+}
+}
+
+.....................................................................................
+.....................................................................................
+
+package com.olobby.R;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.TaskManagement.ObjRepo.AddProjectPage;
+import com.TaskManagement.ObjRepo.Add_Edit_SubTask;
+import com.TaskManagement.ObjRepo.Edit_AddTask;
+import com.TaskManagement.ObjRepo.InlineEdit;
+import com.TaskManagement.ObjRepo.TaskManagement;
+import com.olobby.ObjectRepo.HomePage;
+import com.olobby.genericUtility.BaseClass;
+import com.olobby.genericUtility.IConstants;
+
+public class AddSubTask extends BaseClass {
+	static {
+		System.setProperty(IConstants.chromeKey,IConstants.chromeValue);
+	}
+   @Test(
+      groups = {"SmokeTest"}
+   )
+   public void taskEdit() throws InterruptedException {
+	   HomePage hp = new HomePage(driver);
+	   Thread.sleep(6000);
+	   hp.getTaskManageMent().click();
+	   
+	   TaskManagement t = new TaskManagement(driver);
+//	   t.getProjectClicik().click();
+	   Thread.sleep(10000);
+	   t.getTasksClick().click();
+	   Thread.sleep(8000);
+//	   WebElement hidenelement = driver.findElement(By.xpath("//tbody[@role='presentation']/../descendant::td[@aria-colindex='2']/../descendant::span[text()='Automation_Olobby_Test1']/..//following-sibling::span[text()='Open']"));
+//	   Thread.sleep(2000);
+//	   ((JavascriptExecutor)driver).executeScript("document.scrollIntoView",hidenelement);
+//	   hidenelement.click();
+//	   AddProjectPage ap =new AddProjectPage(driver);
+//	   ap.getAllProjectTask().click();
+//	   WebElement hidenelement2 = driver.findElement(By.xpath("//dx-tree-list[@role='presentation']/../descendant::td[@aria-colindex='1']/../descendant::span[text()='Task001_AT']/..//following-sibling::span[text()='Open']"));
+//	   Thread.sleep(2000);
+//	   ((JavascriptExecutor)driver).executeScript("document.scrollIntoView",hidenelement2);
+//	   hidenelement2.click();
+//	   Edit_AddTask ea=new Edit_AddTask(driver);
+//	   ea.getAddSubTask().click();
+	   Add_Edit_SubTask ae=new Add_Edit_SubTask(driver);
+//	   ae.getName().sendKeys(eLib.readDataFromExcel("AddSubTask", 1, 0));
+//	   ae.getStartDate().sendKeys(eLib.readDataFromExcel("AddSubTask", 1, 1));
+//	   ea.clickEnter(driver);
+//	   ae.getEndDate().sendKeys(eLib.readDataFromExcel("AddSubTask", 1, 2));
+//	   ea.clickEnter(driver);
+//	   ae.getTeamMembers().sendKeys(eLib.readDataFromExcel("AddSubTask", 1, 3));
+//	   ea.clickEnter(driver);
+//	   ae.getWatchers().sendKeys(eLib.readDataFromExcel("AddSubTask", 1, 4));
+//	   ea.clickEnter(driver);
+//	   ae.getStatus().sendKeys(eLib.readDataFromExcel("AddSubTask", 1, 4));
+//	   ea.clickEnter(driver);
+//	   ae.getPriority().sendKeys(eLib.readDataFromExcel("AddSubTask", 1, 5));
+//	   ea.clickEnter(driver);
+//	   ae.getOwner().sendKeys(eLib.readDataFromExcel("AddSubTask", 1, 6));
+//	   ea.clickEnter(driver);
+//	   ae.getSave().click();
+//	   ea.getCloseWindowLogo().click();
+//	      
+	   //delete subTask
+	   Thread.sleep(5000);
+	   WebElement hidenelement3 = driver.findElement(By.xpath("//tbody[@role='presentation']/../descendant::td[@aria-colindex='4']/../descendant::span[text()='RanaTask123']/..//following-sibling::span[text()='Open']"));
+	   Thread.sleep(6000);
+	   ((JavascriptExecutor)driver).executeScript("document.scrollIntoView",hidenelement3);
+	   Thread.sleep(6000);
+	   hidenelement3.click();
+	   Thread.sleep(6000);
+	   ae.getDeleteSubTask().click();
+	   Thread.sleep(6000);
+	   ae.getDelete().click();
+	   //Restore subtask
+	   Thread.sleep(8000);
+	   hp.getTrash().click();
+	  
+	   Thread.sleep(5000);
+	   InlineEdit ie = new InlineEdit(driver);
+	   ae.getCheckbox().click();
+	   Thread.sleep(6000);
+	   ie.getRestoreButton().click();
+	   Thread.sleep(6000);
+	   ie.getRestorePopup().click();
+	  
+	  
+   }
+}
+.........................................................................................
+............................................................................................
+package com.olobby.R;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.TaskManagement.ObjRepo.Edit_AddTask;
+import com.TaskManagement.ObjRepo.TaskManagement;
+import com.olobby.ObjectRepo.HomePage;
+import com.olobby.genericUtility.BaseClass;
+import com.olobby.genericUtility.IConstants;
+
+public class EditTask extends BaseClass {
+	static {
+		System.setProperty(IConstants.chromeKey,IConstants.chromeValue);
+	}
+   @Test(
+      groups = {"SmokeTest"}
+   )
+   public void taskEdit() throws InterruptedException {
+	   HomePage hp = new HomePage(driver);
+	   Thread.sleep(6000);
+	   hp.getTaskManageMent().click();
+	   Thread.sleep(15000);
+	   TaskManagement t = new TaskManagement(driver);
+	   Thread.sleep(6000);
+	   t.getTasksClick().click();
+	   WebElement hidenelement3 = driver.findElement(By.xpath("//tbody[@role='presentation']/../descendant::td[@aria-colindex='4']/../descendant::span[text()='RanaTask123']/..//following-sibling::span[text()='Open']"));
+	   Thread.sleep(5000);
+	   ((JavascriptExecutor)driver).executeScript("document.scrollIntoView",hidenelement3);
+	   Thread.sleep(6000);
+	   hidenelement3.click();
+	   Edit_AddTask ea=new Edit_AddTask(driver);
+//	   ea.getTaskName().clear();
+//	   ea.getTaskName().sendKeys(eLib.readDataFromExcel("EditTask", 1, 0));
+	   ea.getLocation().sendKeys(eLib.readDataFromExcel("EditTask", 1, 1));
+	   ea.clickEnter(driver);
+	   ea.getProjectName().sendKeys(eLib.readDataFromExcel("EditTask", 1, 2));
+	   ea.clickEnter(driver);
+	   Thread.sleep(2000);
+//	   ea.getStartDate().clear();
+//	   ea.getStartDate().sendKeys(eLib.readDataFromExcel("EditTask", 1, 3));
+//	   //tbody[@role='presentation']/../descendant::td[@aria-colindex='4']/../descendant::span[text()='RanaTask1']/..//following-sibling::span[text()='Open']
+//	   ea.getDueDate().clear();
+//	   
+//	   ea.getDueDate().sendKeys(eLib.readDataFromExcel("EditTask", 1, 4));
+	   ea.getStatus().sendKeys(eLib.readDataFromExcel("EditTask", 1, 3));
+	   ea.clickEnter(driver);
+	   ea.getPriority().sendKeys(eLib.readDataFromExcel("EditTask", 1, 4));
+	   ea.clickEnter(driver);
+	   ea.getSave().click();
+	   Thread.sleep(6000);
+
+   }
+}
+.........................................................................................
+..........................................................................................
+
+package com.olobby.R;
+
+import java.util.concurrent.TimeUnit;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+import com.TaskManagement.ObjRepo.AddProjectPage;
+import com.TaskManagement.ObjRepo.Edit_AddTask;
+import com.TaskManagement.ObjRepo.InlineEdit;
+import com.TaskManagement.ObjRepo.TaskManagement;
+import com.olobby.ObjectRepo.HomePage;
+import com.olobby.genericUtility.BaseClass;
+import com.olobby.genericUtility.IConstants;
+
+public class TaskMang extends BaseClass {
+	static {
+		System.setProperty(IConstants.chromeKey,IConstants.chromeValue);
+	}
+   @Test(
+      groups = {"SmokeTest"}
+      
+   )
+   public void editProject() throws InterruptedException {
+	   HomePage hp = new HomePage(driver);
+	   Thread.sleep(5000);
+	   hp.getTaskManageMent().click();
+//	   Thread.sleep(10000);
+	   
+	   TaskManagement t = new TaskManagement(driver);
+	   Thread.sleep(10000);
+	   //Projects p = new Projects(driver);
+	   t.getProjectClicik().click();
+	   Thread.sleep(6000);
+//	   Alert alert = driver.switchTo().alert();
+//	   alert.accept();
+	   //Updating existing task test cases with all fields
+	   WebElement hidenelement = driver.findElement(By.xpath("//tbody[@role='presentation']/../descendant::td[@aria-colindex='2']/../descendant::span[text()='MyFirstProject1']/..//following-sibling::span[text()='Open']"));
+	   Thread.sleep(6000);
+	   ((JavascriptExecutor)driver).executeScript("document.scrollIntoView",hidenelement);
+	   hidenelement.click();
+	   ////tbody[@role='presentation']/../descendant::td[@aria-colindex='5']/../descendant::div[text()=' T0000001175 ']/../../td/descendant::span[@class='checkmark']
+//	   Thread.sleep(3000);
+	   AddProjectPage ap=new AddProjectPage(driver);
+	   //delete project and restore 
+//	   ap.getDeleteProject().click();
+//	   ap.getDeletePopUp().click();
+//	   Thread.sleep(5000);
+//
+//	   hp.getTrash().click();
+//	   
+//	   Thread.sleep(5000);
+//	   InlineEdit ie = new InlineEdit(driver);
+//	   ie.getRestoreCheckbox().click();
+//	   ie.getRestoreButton().click();
+//	   ie.getRestorePopup().click();
+//	   Thread.sleep(5000);
+//	   t.getTasksClick().click();
+//	   Thread.sleep(3000);
+//	   ap.getEnterProjectName().clear();
+//	   ap.getEnterProjectName().sendKeys(eLib.readDataFromExcel("EditProject", 1, 0));
+	   Thread.sleep(2000);
+	   ap.getSelectLocation().sendKeys(eLib.readDataFromExcel("EditProject", 1, 1));
+	   Thread.sleep(2000);
+	   ap.clickEnter(driver);
+	   //ap.getClearAllTeamMembers().click();
+	   Thread.sleep(2000);
+	   
+	   ap.getUnassignedCheqBox().click();
+	   Thread.sleep(2000);
+	   ap.getEnterStatus().sendKeys(eLib.readDataFromExcel("EditProject", 1, 2));
+	   ap.clickEnter(driver);
+	   Thread.sleep(2000);
+	   ap.getEnterPriority().sendKeys(eLib.readDataFromExcel("EditProject", 1, 3));
+	   ap.clickEnter(driver);
+	   Thread.sleep(2000);
+	   ap.getClickStartDate().click();
+	   Thread.sleep(2000);
+	   ap.getClickStartDate().clear();
+	   ap.getClickStartDate().sendKeys(eLib.readDataFromExcel("EditProject", 1, 4));
+	   ap.clickEnter(driver);
+	   Thread.sleep(2000);
+	   ap.getClickDueDate().click();
+	   ap.getClickDueDate().clear();
+	   Thread.sleep(2000);
+	   ap.getClickDueDate().sendKeys(eLib.readDataFromExcel("EditProject", 1, 5));
+	   ap.clickEnter(driver);
+//	   Thread.sleep(4000);
+//	   ap.getSelectTeamMeambers().sendKeys(eLib.readDataFromExcel("EditProject", 1, 6));
+	   Thread.sleep(2000);
+	   ap.getClickSaveButton().click();
+	   
+	   //browse the file
+//	   ap.getAttachment().click();
+//	   WebElement browse = driver.findElement(By.xpath("//div[@id='drag']/descendant::button[text()=' Browse files ']"));
+//	   browse.click();
+//	   browse.sendKeys("C:\\Users\\RanadheerDurgi\\Downloads\\All.xlsx");
+//	   ap.getAllProjectTask().click();
+//	   WebElement hidenelement2 = driver.findElement(By.xpath("//dx-tree-list[@role='presentation']/descendant::td[@aria-colindex='2']/descendant::span[text()='T0000000035']/../../preceding-sibling::td[@aria-colindex='1']/descendant::span[text()='FirstTaskName']/../following-sibling::span"));
+//	   Thread.sleep(2000);
+//	   ((JavascriptExecutor)driver).executeScript("document.scrollIntoView",hidenelement2);
+//	   hidenelement2.click();
+//	   Thread.sleep(2000);
+//	   Edit_AddTask ea=new Edit_AddTask(driver);
+//	   ea.getTaskName().clear();
+//	   ea.getTaskName().sendKeys(eLib.readDataFromExcel("EditProject", 1, 6));
+//	   ap.getEnterProjectName().clear();
+//	   ap.getEnterProjectName().sendKeys(eLib.readDataFromExcel("EditProject", 1, 6));
+	   
+	   
+//	   ea.getStartDate().clear();
+//	   ea.getStartDate().sendKeys(eLib.readDataFromExcel("EditProject", 1, 7));
+//
+//	   ea.getDueDate().clear();
+//	   
+//	   ea.getDueDate().sendKeys(eLib.readDataFromExcel("EditProject", 1, 8));
+	   
+//	   ea.getLocation().sendKeys(eLib.readDataFromExcel("EditProject", 1, 9));
+//	   ea.clickEnter(driver);
+//	   ea.getProjectName().sendKeys(eLib.readDataFromExcel("EditProject", 1, 10));
+//	   ea.clickEnter(driver);
+//	   ea.getStatus().sendKeys(eLib.readDataFromExcel("EditProject", 1, 11));
+//	   ea.getPriority().sendKeys(eLib.readDataFromExcel("EditProject", 1, 12));
+//	   
+//	   ea.getSave().click();
+//	   
+//	   ap.getClickSaveButton().click();
+	 
+   }
+   
+}
+
+
+
+
+

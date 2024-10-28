@@ -1,0 +1,31 @@
+package com.cmd.rana;
+
+import org.testng.annotations.Test;
+
+import com.cps.ObjectRepository.Cmd_Add_Com_Log;
+import com.cps.genericUtility.BaseClass;
+
+public class Add_Com_Log extends BaseClass  {
+	@Test
+	public void addComlog() throws InterruptedException{
+		Cmd_Add_Com_Log acl=new Cmd_Add_Com_Log(driver);
+		acl.mouseMover(driver);
+		acl.clickWorkflowDropdown();
+		acl.clickWorkflowpage();
+		acl.pageClick();
+		Thread.sleep(4000);
+		acl.clickAddcomLog();
+		acl.getCaller().sendKeys(eLib.readDataFromExcel("Add_Com_Log", 1, 0));
+		acl.getDesription().sendKeys(eLib.readDataFromExcel("Add_Com_Log", 1, 1));
+		acl.getTin_PractiseDropdown().sendKeys(eLib.readDataFromExcel("Add_Com_Log", 1, 2));
+		Thread.sleep(4000);
+		acl.clickEnter(driver);
+		acl.getProvidersDropdown().sendKeys(eLib.readDataFromExcel("Add_Com_Log", 1, 3));
+		Thread.sleep(4000);
+		acl.clickEnter(driver);
+		acl.clickAssigncheck();
+		Thread.sleep(4000);
+		acl.clickSave();
+	}
+
+}

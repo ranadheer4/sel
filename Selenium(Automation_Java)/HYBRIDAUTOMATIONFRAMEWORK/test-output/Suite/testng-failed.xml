@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.prakash.genericUtility.ItestListenerImtn"/>
+  </listeners>
+  <test thread-count="3" parallel="classes" name="Test(failed)">
+    <classes>
+      <class name="com.cps.OrangeHRM.Demo1DeleteUser">
+        <methods>
+          <include name="closeTheBrowser"/>
+          <include name="deleteCustomer"/>
+          <include name="logoutFromAppln"/>
+          <include name="launchTheBrowser"/>
+          <include name="loginToAppln"/>
+        </methods>
+      </class> <!-- com.cps.OrangeHRM.Demo1DeleteUser -->
+      <class name="com.cps.OrangeHRM.New_User_OrangeHrm">
+        <methods>
+          <include name="closeTheBrowser"/>
+          <include name="logoutFromAppln"/>
+          <include name="launchTheBrowser"/>
+          <include name="create_User"/>
+          <include name="loginToAppln"/>
+        </methods>
+      </class> <!-- com.cps.OrangeHRM.New_User_OrangeHrm -->
+      <class name="com.cps.OrangeHRM.Demo2EditUser">
+        <methods>
+          <include name="closeTheBrowser"/>
+          <include name="logoutFromAppln"/>
+          <include name="launchTheBrowser"/>
+          <include name="editGeneralInfo"/>
+          <include name="loginToAppln"/>
+        </methods>
+      </class> <!-- com.cps.OrangeHRM.Demo2EditUser -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

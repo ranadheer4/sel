@@ -1,0 +1,30 @@
+package com.cmd.rana;
+
+import org.testng.annotations.Test;
+
+import com.cps.ObjectRepository.Cmd_Add_User;
+import com.cps.genericUtility.BaseClass;
+import com.cps.genericUtility.IConstants;
+
+public class Add_user extends BaseClass{
+
+	@Test
+	public void addUser() throws InterruptedException {
+	Cmd_Add_User cd = new Cmd_Add_User(driver);
+	cd.mouseMover(driver);
+	cd.clickSettings();
+	cd.clickAdduser();
+	Thread.sleep(5000);
+	cd.pageClick();
+//	cd.firstName();
+//	cd.lastName();
+//	cd.email();
+//	cd.pswrd();
+//	cd.cPswrd();
+	cd.getFirstName().sendKeys(eLib.readDataFromExcel("One", 1, 0));
+	cd.clickActive();
+	cd.clickCreate();
+	
+	
+}
+}

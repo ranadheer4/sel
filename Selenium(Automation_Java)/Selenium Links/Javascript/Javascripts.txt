@@ -1,0 +1,2 @@
+http://makeseleniumeasy.com/home/seleniumbytopic/javascript-usage-in-selenium/
+http://makeseleniumeasy.com/2020/07/22/get-data-from-non-table-html-tag-webtable-using-selenium-webdriver/

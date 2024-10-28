@@ -1,0 +1,52 @@
+package cmd;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Trail_Test {
+
+	public static void main(String[] args) throws Throwable {
+		// TODO Auto-generated method stub
+
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		
+		driver.get("https://dev-refactor.credentialmydoc.com/");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("ctg@credentialmydoc.com");
+		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("Ctgadmin@2022");
+		driver.findElement(By.xpath("//button[normalize-space()='Sign in']")).click();
+		
+		driver.findElement(By.xpath("//button[@id='sidebarToggle']")).click();
+		//Actions ac=new Actions(driver);
+		//ac.moveToElement(driver.findElement(By.xpath("//nav[@class='navbar navbar-expand navbar-light bg-white fixed-top']"))).click().perform();
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//a[@class='sidebar-link has-arrow waves-effect waves-dark ng-star-inserted collapsed']")).click();
+        List<WebElement> options=driver.findElements(By.xpath("//ul[@id='provider']"));
+        
+        
+           for(WebElement option:options)
+               
+           { 
+               if(option.getText().equals("Provider portal List"))
+               {
+                   
+                   option.click();
+                   break;
+		
+
+	}
+           }
+	}
+
+}

@@ -1,0 +1,14 @@
+<suite name="suite">
+	<test name="test" testRunner='2'>
+		<classes>
+			
+			<class name="com.olobby.R.FileShare_Clients"/>
+			
+			
+		</classes>
+		
+		
+		
+	</test>
+	
+</suite>

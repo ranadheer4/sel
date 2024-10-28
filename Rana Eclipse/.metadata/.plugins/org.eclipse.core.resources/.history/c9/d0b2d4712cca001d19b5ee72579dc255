@@ -1,0 +1,24 @@
+package com.cmd.Rana;
+
+import org.testng.annotations.Test;
+
+import com.cps.ObjectRepository.Expiration_Weekly;
+import com.cps.genericUtility.BaseClass;
+
+public class ExpirationWeekly extends BaseClass{
+	
+	 @Test(groups = {"SmokeTest"})
+		 
+	 public void weeklyExpiration() throws InterruptedException {
+		 Expiration_Weekly ew=new Expiration_Weekly(driver);
+		   ew.mouseMover(driver);
+		   ew.clickExpirations();
+		   Thread.sleep(5000);
+		   ew.clickPage();
+		   Thread.sleep(5000);
+		   ew.getWeeklyExpiration().click();
+		   ew.getTin().sendKeys(eLib.readDataFromExcel("", 0, 0));
+		   ew.getUsers().sendKeys(eLib.readDataFromExcel("", 0, 0));
+		   ew.getSearch().click();
+	 }
+}

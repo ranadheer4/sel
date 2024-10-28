@@ -1,0 +1,24 @@
+package rana_selen;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+public class HandleDropdown {
+	WebDriver driver;
+	@Test
+	public void list() {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://dev-refactor.credentialmydoc.com/workflow");
+		WebElement dd=driver.findElement(By.xpath(""));
+		Actions ac=new Actions(driver);
+		ac.moveToElement(dd).perform();
+		String option="";
+		WebElement customOption=driver.findElement(By.xpath(""));
+		customOption.click();
+	}
+
+}

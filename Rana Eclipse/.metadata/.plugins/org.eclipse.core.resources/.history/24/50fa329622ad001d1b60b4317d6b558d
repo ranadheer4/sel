@@ -1,0 +1,32 @@
+package com.cps.ObjectRepository;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.cps.genericUtility.WebDriverUtility;
+
+public class Expiration_MailSendNotify extends WebDriverUtility{
+	 @FindBy(xpath = "//aside[@class='left-sidebar']")private WebElement Leftsidebar;
+	 @FindBy(xpath = "//body/ctg-root/app-main-layout[@class='ng-star-inserted']/section[@id='wrapper']/app-side-nav/div[@class='sidebar navbar-nav toggled']/div[@id='main-wrapper']/aside[@class='left-sidebar']/div[@class='scroll-sidebar']/nav[@class='sidebar-nav']/ul[@id='sidebarnav']/li[4]")private WebElement Expirations;
+	 @FindBy(xpath = "//div[@class='topBox']")private WebElement PageClick;
+	 @FindBy(xpath = "//datatable-body[@role='rowgroup']/descendant::datatable-scroller[@class='datatable-scroll ng-star-inserted']/descendant::span[text()='DEA Exp Date (424342342)']/../../../descendant::span[text()='Ashlyn Tyson 02/09/2023, 11:38:37 AM ']/../../../descendant::datatable-body-cell/div/span/i[@class='far fa-envelope fa-2x']")private WebElement SendMail;
+	// @FindBy(xpath = "")private  ;
+	 public Expiration_MailSendNotify(WebDriver driver) {
+			PageFactory.initElements(driver, this);
+		}
+	 public void mouseMover(WebDriver driver) {
+	      mouseOverAnElement(driver, Leftsidebar);
+	      Expirations.click();
+	   }
+	 public void clickExpirations() {
+		 Expirations.click();
+	 }
+	 public void clickPage() {
+		 PageClick.click();
+	 }
+	 public void clickSendmail() {
+		 SendMail.click();
+	 }
+}

@@ -1,0 +1,3 @@
+Hybrid Framework
+https://www.scientecheasy.com/2019/12/selenium-framework.html/
+https://www.academia.edu/32159157/Design_and_Implementation_of_Hybrid_Test_Automation_Framework_for_Web_Based_Application

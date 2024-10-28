@@ -1,0 +1,62 @@
+package com.olobby.ranadheer;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.olobby.ObjectRepo.HomePage;
+import com.olobby.genericUtility.BaseClass;
+import com.olobby.genericUtility.IConstants;
+
+public class Users_List extends BaseClass{
+	private static final int i = 0;
+	static {
+		System.setProperty(IConstants.chromeKey,IConstants.chromeValue);
+	}
+   @Test(
+      groups = {"SmokeTest"}
+      
+   )
+   public void roles_users() throws InterruptedException {
+	   HomePage hp = new HomePage(driver);
+	   hp.settingusers(driver);
+	 //store table into webelement
+//	   List<WebElement>cols = driver.findElements(By.xpath("//table[@role='presentation']/tbody/tr/td"));
+	   //count no of rows in table
+//	   Thread.sleep(5000);
+//	   System.out.println("no of cols are::"+cols.size());
+//	   List<WebElement>rows = driver.findElements(By.xpath("//table[@role='presentation']/tbody/tr/td[7]"));
+	   //count no of rows in table
+//	   Thread.sleep(5000);
+//	   System.out.println("no of rows are::"+rows.size());
+//	   for(int i=2;i<rows.size();i++) {
+//		   WebElement row=rows.get(i);
+//	   }
+//	   List<WebElement>cols = row.findElements(By.tagName("td"));
+//	   int columnnIndexToclick=6;
+//	   int rowIndexToClick=5;
+//	   Thread.sleep(5000);
+//	   if(columnnIndexToclick < cols.size() && i==rowIndexToClick) {
+//		   WebElement cellToClick=cols.get(columnnIndexToclick);
+//		   cellToClick.click();
+	   
+	   WebElement table=driver.findElement(By.id("gridContainer2"));
+	   List<WebElement>rows=table.findElements(By.tagName("tr"));
+	   Thread.sleep(5000);
+	   for(int i=0;i<rows.size();i++) {
+		   WebElement row=rows.get(i);
+	   
+		List<WebElement>cells = row.findElements(By.tagName("td"));
+	   
+	   int columnnIndexToclick=7;
+	   int rowIndexToClick=5;
+	   Thread.sleep(5000);
+	   if(columnnIndexToclick < cells.size() && i==rowIndexToClick) {
+		   WebElement cellToClick=cells.get(columnnIndexToclick);
+		   cellToClick.click();
+   }
+}
+   }
+}

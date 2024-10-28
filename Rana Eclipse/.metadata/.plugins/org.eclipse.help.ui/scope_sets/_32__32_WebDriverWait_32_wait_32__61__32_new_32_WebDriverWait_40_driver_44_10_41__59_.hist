@@ -1,0 +1,4 @@
+#Tue May 21 15:32:27 IST 2024
+expression=\  WebDriverWait wait \= new WebDriverWait(driver,10);
+org.eclipse.help.ui.localSearch.master=true
+__DEFAULT__=false

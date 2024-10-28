@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Failed suite [rana]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="classes" name="Report(failed)">
+    <classes>
+      <class name="rana_selen.Verify_page">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="cbanking"/>
+        </methods>
+      </class> <!-- rana_selen.Verify_page -->
+    </classes>
+  </test> <!-- Report(failed) -->
+</suite> <!-- Failed suite [rana] -->

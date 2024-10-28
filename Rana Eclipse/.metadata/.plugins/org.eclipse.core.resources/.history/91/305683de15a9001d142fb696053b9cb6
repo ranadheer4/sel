@@ -1,0 +1,48 @@
+package com.cmd.rana;
+
+import org.testng.annotations.Test;
+
+import com.cps.ObjectRepository.Cmd_Add_Note;
+import com.cps.genericUtility.BaseClass;
+
+public class Add_Note extends BaseClass {
+	@Test
+	public void addNote() throws InterruptedException {
+		Cmd_Add_Note n = new Cmd_Add_Note(driver);
+		n.mouseMover(driver);
+		n.clickWorkflowDropdown();
+		Thread.sleep(3000);
+		n.clickWorkflowpage();
+		Thread.sleep(3000);
+		n.pageClick();
+		Thread.sleep(3000);
+		n.clickAddnote();
+		n.getSubject().sendKeys(eLib.readDataFromExcel("Add_Note", 1, 0));
+		n.getDescription().sendKeys(eLib.readDataFromExcel("Add_Note", 1, 1));
+		Thread.sleep(3000);
+		n.getPayerdropdown().sendKeys(eLib.readDataFromExcel("Add_Note", 1, 2));
+		Thread.sleep(3000);
+		n.clickEnter(driver);
+		Thread.sleep(3000);
+		n.getTindropdown().sendKeys(eLib.readDataFromExcel("Add_Note", 1, 3));
+		Thread.sleep(3000);
+		n.clickEnter(driver);
+		Thread.sleep(3000);
+		n.getTinprovlocdropdown().sendKeys(eLib.readDataFromExcel("Add_Note", 1, 4));
+		Thread.sleep(3000);
+		n.clickEnter(driver);
+		Thread.sleep(3000);
+		n.getAutoTPLdrpdwn().sendKeys(eLib.readDataFromExcel("Add_Note", 1, 5));
+		Thread.sleep(3000);
+		n.clickEnter(driver);
+		n.getStatusDrpd().sendKeys(eLib.readDataFromExcel("Add_Note", 1, 6));
+		Thread.sleep(3000);
+		n.clickEnter(driver);
+		n.clickDate();
+		Thread.sleep(6000);
+		n.clickCreate();
+
+	}
+	
+
+}

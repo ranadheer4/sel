@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" thread-count="3">
+    <listeners>
+        <listener class-name="com.cps.genericUtility.ItestListenerImtn"/>
+    </listeners>
+<test thread-count="2" name="Test">
+    <classes>
+        <class name="com.cmd.P.closeMultiple_TC_03"/>
+		<class name="com.cmd.P.createTask_TC_01"/>
+		
+        <class name="com.cmd.V.SmokeTC_01"/>
+        <class name="com.cmd.V.SmokeTC_02"/>
+        <class name="com.cmd.V.SmokeTC_03"/>
+        <class name="com.cmd.V.SmokeTC_04"/>
+        <class name="com.cmd.V.SmokeTC_05"/>
+        <class name="com.cmd.V.SmokeTC_06"/>
+        <class name="com.cmd.V.SmokeTC_07"/>
+        <class name="com.cmd.V.SmokeTC_08"/>
+        <class name="com.cmd.V.SmokeTC_09"/>
+        <class name="com.cmd.V.SmokeTC_10"/>
+        <class name="com.cmd.V.SmokeTC_11"/>
+        <class name="com.cmd.V.SmokeTC_12"/>
+        <class name="com.cmd.V.SmokeTC_13"/>
+        <class name="com.cmd.V.SmokeTC_14"/>
+        <class name="com.cmd.V.SmokeTC_15"/>
+        <class name="com.cmd.R.Add_Com_Log"/>
+        <class name="com.cmd.R.Add_Note"/>
+        <class name="com.cmd.R.Add_user"/>
+        <class name="com.cmd.R.Expirations_mailSendnotify"/>
+        <class name="com.cmd.R.ExpirationWeekly"/>
+        <class name="com.cmd.R.Payer_Setting"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

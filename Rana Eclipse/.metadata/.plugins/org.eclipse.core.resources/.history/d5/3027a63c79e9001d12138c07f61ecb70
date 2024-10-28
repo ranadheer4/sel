@@ -1,0 +1,47 @@
+package com.olobby.vikram;
+
+import org.testng.annotations.Test;
+
+import com.TaskManagement.ObjRepo.AddTask;
+import com.TaskManagement.ObjRepo.TaskManagement;
+import com.TaskManagement.ObjRepo.TaskView;
+import com.TaskManagement.ObjRepo.Tasks;
+import com.olobby.ObjectRepo.HomePage;
+import com.olobby.genericUtility.BaseClass;
+import com.olobby.genericUtility.IConstants;
+
+public class SmokeTC_08 extends BaseClass {
+
+	static {
+		System.setProperty(IConstants.chromeKey, IConstants.chromeValue);
+	}
+	
+	@Test
+	public void AddTasksFromFoldAccAssignTM() throws InterruptedException
+	{
+		HomePage hp = new HomePage(driver);
+		TaskManagement tm = new TaskManagement(driver);
+		TaskView tv = new TaskView(driver);
+		Tasks tsk = new Tasks(driver);
+	    hp.getTaskManageMent().click();
+	    tm.getTasksClick().click();
+	    tsk.getAddViews().click();
+	    tv.getNameDefaultView().sendKeys(eLib.readDataFromExcel("TaskView", 1, 0));
+	    tv.getTaskId().click();
+	    tv.getAssignProj().click();
+	    tv.getNextBtn().click();
+	    tv.getSortTaskList().click();
+	    tv.getSortSelectTaskId().click();
+	    tv.getSaveBtn().click();
+	    Thread.sleep(3000);
+	    tv.RightClickTest(driver);
+	    tv.getDeleteView().click();
+	    tv.getDeletePopup().click();
+	    String text = tv.getDefaultView().getText();
+	    System.out.println(text);
+	    tv.RightClickDefault(driver);
+	    
+
+		
+	}
+}

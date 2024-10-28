@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="test1" parallel= "tests" thread-count="2">
+  <test name="Test-Runner-Chrome">
+   <parameter name="BROWSER" value="chrome"> </parameter>
+    <classes>
+      <class name="com.cmd.R.Add_Note"/>
+	  <class name="com.cmd.R.Expirations_mailSendnotify"/>
+	  <class name="com.cmd.R.ExpirationWeekly"/>
+    </classes>
+  </test>
+		<test name="Test-Runner-edge">
+    
+  <parameter name="BROWSER" value="chrome"></parameter> 
+    <classes>
+    <class name="com.cmd.R.Add_user"/>
+		<class name="com.cmd.R.Payer_Setting"/>
+   </classes>
+  </test> <!-- Test -->
+  
+</suite> <!-- Suite -->

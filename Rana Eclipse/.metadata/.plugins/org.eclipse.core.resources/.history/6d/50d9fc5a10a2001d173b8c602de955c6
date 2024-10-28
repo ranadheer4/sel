@@ -1,0 +1,106 @@
+package com.cps.ObjectRepository;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.cps.genericUtility.IConstants;
+import com.cps.genericUtility.WebDriverUtility;
+
+public class Cmd_Add_Note extends WebDriverUtility implements IConstants  {
+	
+	@FindBy(xpath = "//aside[@class='left-sidebar']")private WebElement Leftsidebar;
+	@FindBy(xpath = "//i[@class='fa fa-th-large']")private WebElement Workflow_Dropdown;
+	@FindBy(xpath = "//i[@class='fa-network-wired fas']")private WebElement Workflowpage;
+	@FindBy(xpath = "//body/ctg-root/app-main-layout[@class='ng-star-inserted']/section[@id='wrapper']/div[1]")private WebElement Pageclick;
+	@FindBy(xpath = "//div[text()='ADD NOTE ']")private WebElement Addnote;
+	@FindBy(xpath = "//input[@id='subject']")private WebElement Subject;
+	@FindBy(xpath = "//textarea[@id='description']")private WebElement Description;
+	@FindBy(xpath = "(//span[@class='ng-arrow-wrapper'])[9]")private WebElement Payerdropdown;
+	@FindBy(xpath = "//div[@class='scrollable-content']")private WebElement Payeritem;
+	//@FindBy(xpath = "")private WebElement Pageclick1;
+	@FindBy(xpath = "//ng-select[@name='tin']//span[@class='ng-arrow-wrapper']")private WebElement Tindropdown;
+	@FindBy(xpath = "//span[normalize-space()='0218-telangana']")private WebElement Tinitem;
+	@FindBy(xpath = "//ng-select[@placeholder='Select category']//input[@type='text']")private WebElement Tinprovlocdropdown;
+	@FindBy(xpath = "//span[normalize-space()='Tin']")private WebElement Tinprovlocitem;
+	@FindBy(xpath = "//ng-select[@placeholder='Select Status']//div[@class='ng-select-container ng-has-value']")private WebElement StatusDrpd;
+	@FindBy(xpath = "//span[normalize-space()='In Progress']")private WebElement StatusItem;
+	//@FindBy(xpath = "")private WebElement Assignto;
+	@FindBy(xpath = "//input[contains(@placeholder,'mm-dd-yyyy')]")private WebElement Date;
+	@FindBy(xpath = "//button[contains(text(),'Create')]")private WebElement Create;
+	//@FindBy(xpath = "")private WebElement ;
+	//ng-select[@class='auto-grow-location-2x ng-select ng-select-multiple ng-select-searchable ng-select-clearable ng-select-bottom ng-dirty ng-touched ng-invalid ng-select-opened']//span[@class='ng-arrow-wrapper']
+	public Cmd_Add_Note(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+	}
+	public void mouseMover(WebDriver driver)
+    {
+        mouseOverAnElement(driver, Leftsidebar);
+        Workflow_Dropdown.click();
+    }
+	public void clickWorkflowDropdown() {
+		Workflow_Dropdown.click();
+	}
+	public void clickWorkflowpage() {
+		Workflowpage.click();
+	}
+	public void pageClick() {
+		Pageclick.click();
+	}
+	public void clickAddnote(){
+		Addnote.click();
+	}
+	public void enterSubject() {
+		Subject.sendKeys(sbjt);
+	}
+	public void enterDescription() {
+		Description.sendKeys(descrip);
+	
+	}
+	public void clickAndAddPayerDropDown(WebDriver driver) {
+	     mouseOverAnElement(driver,Payerdropdown);
+	     Payerdropdown.click();
+	}
+	public void clickPayer() {
+		Payeritem.click();
+	}
+	public void clickAndAddTinDropDown(WebDriver driver) {
+        mouseOverAnElement(driver,Tindropdown);
+        Tindropdown.click();
+	}
+	public void clickTin() {
+		Tinitem.click();
+	}
+	public void clickAndAddTinProvLocDropDown(WebDriver driver) {
+        mouseOverAnElement(driver,Tinprovlocdropdown);
+        Tinprovlocdropdown.click();
+	}
+	public void clickTinprovLoc() {
+		Tinprovlocitem.click();
+	}
+	public WebElement getSubject() {
+		return Subject;
+	}
+	public WebElement getDescription() {
+		return Description;
+	}
+	public void clickAndaddStatus(WebDriver driver) {
+        mouseOverAnElement(driver,StatusDrpd);
+        StatusDrpd.click();
+	}
+	public void clickStatus() {
+		StatusItem.click();
+	}
+	public void clickDate() {
+		Date.clear();
+		Date.sendKeys("18052022");
+	}
+	public WebElement getDate() {
+		return Date;
+	}
+	public void clickCreate() {
+		Create.click();
+	}
+	
+}

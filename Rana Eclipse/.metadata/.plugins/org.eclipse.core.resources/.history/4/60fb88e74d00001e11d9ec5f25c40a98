@@ -1,0 +1,28 @@
+package com.olobby.ranadheer;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.olobby.ObjectRepo.HomePage;
+import com.olobby.genericUtility.BaseClass;
+import com.olobby.genericUtility.IConstants;
+
+public class Users_List extends BaseClass{
+	static {
+		System.setProperty(IConstants.chromeKey,IConstants.chromeValue);
+	}
+   @Test(
+      groups = {"SmokeTest"}
+      
+   )
+   public void roles_users() throws InterruptedException {
+	   HomePage hp = new HomePage(driver);
+	   hp.settingusers(driver);
+	   List<WebElement> price = driver.findElements(By.xpath("//tbody[@role='presentation']/../descendant::tr/td"));
+	   System.out.println(price.size());
+	   
+}
+}
